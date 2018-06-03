@@ -1,8 +1,11 @@
 <nav class="navbar">
-    <a href="#" class="danger">Здравствуйте гость</a>
+    <a href="#" class="danger">Здравствуйте @guest()<b>@php гость @endphp</b>
+        @else <b>{{Auth::user()->name}}</b>
+        @endguest
+    </a>
     <a class="navbar-brand mx-auto " href="#">IT
         <img src="{{asset('image/img1.png')}}" class="mb-2" alt="book" width="24" height="24"> books</a>
-    <a href="#" class="margin-log">Войти</a>
+    @guest<a href="#" class="margin-log">Войти</a>@endguest
     <a href="#" class="navbar-brand">Basket <span class="badge badge-dark">0</span></a>
 </nav>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

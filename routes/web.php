@@ -11,7 +11,14 @@
 |
 */
 
-Route::get('/','MainController@index');
-Route::get('/single',function (){
+Route::get('/', 'MainController@index');
+Route::get('/single', function () {
     return view('single_item');
 });
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
+    Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
