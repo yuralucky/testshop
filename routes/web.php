@@ -17,7 +17,9 @@ Route::get('/single', function () {
 });
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
+
 });
+Route::resource('category','AdminCategoryController');
 
 Auth::routes();
 

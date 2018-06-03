@@ -1,5 +1,5 @@
 <nav class="navbar">
-    <a href="#" class="danger">Здравствуйте @guest()<b>@php гость @endphp</b>
+    <a href="#" class="danger">Здравствуйте @guest()<b> гость </b>
         @else <b>{{Auth::user()->name}}</b>
         @endguest
     </a>
