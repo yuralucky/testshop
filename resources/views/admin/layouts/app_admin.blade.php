@@ -39,10 +39,10 @@
                 <ul class="nav navbar-nav">
                     &nbsp;<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                           role="button" aria-expanded="false">Добавление</a>
+                           role="button" aria-expanded="false">Управление</a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{action('AdminCategoryController@index')}}">Категории</a></li>
-                            <li><a href="#">Товары</a></li>
+                            <li><a href="{{action('AdminDeviceController@index')}}">Товары</a></li>
                         </ul>
                     </li>
                 </ul>

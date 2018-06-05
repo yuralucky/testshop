@@ -20,6 +20,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['aut
 
 });
 Route::resource('category','AdminCategoryController');
+Route::resource('device','AdminDeviceController');
 
 Auth::routes();
 

@@ -1,5 +1,6 @@
 @extends('admin.layouts.app_admin')
 @section('content')
+
     Create new category
     {!! Form::open(['action'=>'AdminCategoryController@store']) !!}
 

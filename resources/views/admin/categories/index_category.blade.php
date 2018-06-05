@@ -7,7 +7,8 @@
         <td> Название категории</td>
         <td>Краткое описание</td>
         <td>Дата создания</td>
-        <td>Создание и редактирование</td>
+        <td> Редактирование</td>
+        <td>Удаление</td>
         </thead>
         <tbody>
         @foreach($categories as $category)
@@ -19,9 +20,11 @@
                 <td>
 
                     <a href="{{action('AdminCategoryController@show',$category->id)}}"
-                       class="btn btn-small btn-primary">Показать категорию</a>
+                       class="btn-group btn-small btn-primary">Показать категорию</a>
                     <a href="{{action('AdminCategoryController@edit',$category->id)}}"
-                       class="btn btn-small btn-success">Редактировать категорию</a>
+                       class="btn-group btn-small btn-success">Редактировать категорию</a>
+                </td>
+                <td>
                     {!! Form::open(['action'=>['AdminCategoryController@destroy',$category->id],'method'=>'DELETE']) !!}
 
                     {!! Form::submit('&times;',['class'=>'btn ']) !!}

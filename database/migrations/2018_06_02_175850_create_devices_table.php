@@ -22,7 +22,7 @@ class CreateDevicesTable extends Migration
             $table->integer('weight');
             $table->integer('memory');
             $table->integer('CPU');
-            $table->time('year_of_made');
+            $table->integer('year_of_made');
             $table->integer('category');
 //            $table->foreign('category')->references('id')->on('categories');
             $table->timestamps();
