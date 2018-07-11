@@ -1,11 +1,17 @@
-@extends('layouts.app')
+@extends('layouts._layout1')
+<br>
+<br>
+<br>
+<br>
+<br>
 
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-4"></div>
+        <div class="col-md-8 col-md-offset-4">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading"><h2>Enter login</h2></div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">

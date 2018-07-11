@@ -17,4 +17,9 @@ class MainController extends Controller
         $devices=Device::all();
         return view('index',['categories'=>$categories,'devices'=>$devices]);
     }
+
+    public function contact()
+    {
+        return view('contact');
+    }
 }

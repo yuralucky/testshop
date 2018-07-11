@@ -12,6 +12,15 @@
 */
 
 Route::get('/', 'MainController@index');
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/categ',function (){
+    return view('categories1');
+});
+Route::get('single1',function(){
+    return view('single1');
+});
 Route::get('/single', function () {
     return view('single_item');
 });
