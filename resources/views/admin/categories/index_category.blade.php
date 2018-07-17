@@ -20,9 +20,9 @@
                 <td>
 
                     <a href="{{action('AdminCategoryController@show',$category->id)}}"
-                       class="btn-group btn-small btn-primary">Показать категорию</a>
+                       class="btn btn-small btn-primary">Показать категорию</a>
                     <a href="{{action('AdminCategoryController@edit',$category->id)}}"
-                       class="btn-group btn-small btn-success">Редактировать категорию</a>
+                       class="btn btn-small btn-success">Редактировать категорию</a>
                 </td>
                 <td>
                     {!! Form::open(['action'=>['AdminCategoryController@destroy',$category->id],'method'=>'DELETE']) !!}

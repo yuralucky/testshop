@@ -15,18 +15,21 @@ Route::get('/', 'MainController@index');
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/categ',function (){
-    return view('categories1');
+Route::get('/phones','MainController@phones');
+Route::get('/tablets','MainController@tablets');
+Route::get('/laptops','MainController@laptops');
+Route::get('/single','MainController@single');
+Route::get('/admin',function(){
+    return view('admin.dashboard');
+})->middleware('auth');
+//Route::get('/single',function(){
+//    return view('single');
+//});
+Route::get('/test',function(){
+    return view('admin.layouts.app_admin');
 });
-Route::get('single1',function(){
-    return view('single1');
-});
-Route::get('/single', function () {
-    return view('single_item');
-});
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth']], function () {
-    Route::get('/', 'DashboardController@dashboard')->name('admin.index');
-
+Route::get('/single1',function(){
+    return view('categories');
 });
 Route::resource('category','AdminCategoryController');
 Route::resource('device','AdminDeviceController');

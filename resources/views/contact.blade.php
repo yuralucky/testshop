@@ -1,4 +1,4 @@
-@extends('layouts._layout1')
+@extends('layouts._layout')
 @section('content')
     <div class="container contact_container">
         <div class="row">

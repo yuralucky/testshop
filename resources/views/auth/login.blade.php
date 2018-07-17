@@ -1,4 +1,4 @@
-@extends('layouts._layout1')
+@extends('layouts._layout')
 <br>
 <br>
 <br>
