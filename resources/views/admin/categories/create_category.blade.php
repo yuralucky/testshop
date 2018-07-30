@@ -1,7 +1,7 @@
-@extends('admin.layouts.app_admin')
-@section('content')
+@extends('admin.adminka')
+@section('main_content')
 
-    Create new category
+    <h3>Create new category</h3>
     {!! Form::open(['action'=>'AdminCategoryController@store']) !!}
 
     <div class="form-group">

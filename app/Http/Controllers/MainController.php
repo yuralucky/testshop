@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Device;
+use App\Laptop;
+use Doctrine\DBAL\Schema\Table;
 use Illuminate\Http\Request;
 use MongoDB\BSON\Decimal128;
 
@@ -15,7 +17,7 @@ class MainController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $devices = Device::all();
+        $devices = Device::paginate(4);
         return view('index', ['categories' => $categories, 'devices' => $devices]);
     }
 
@@ -28,25 +30,26 @@ class MainController extends Controller
     {
         $categories = Category::all();
         $devices = Device::all();
-        return view('layouts.categories1', compact('categories', 'devices'));
+        return view('phones', compact('categories', 'devices'));
     }
 
     public function laptops()
     {
         $categories = Category::all();
-        $devices = Device::all();
-        return view('layouts.categories1', compact('categories', 'devices'));
+        $laptops = Laptop::all();
+        return view('laptops', compact('laptops', 'categories'));
     }
 
     public function tablets()
     {
         $categories = Category::all();
-        $devices = Device::all();
-        return view('layouts.categories1', compact('categories', 'devices'));
+        $tablets = Tablet::all();
+        return view('tablets', compact('categories', 'tablets'));
     }
 
     public function single(Device $device)
     {
-        return view('single', compact('device'));
+
+      return view('single', compact('device'));
     }
 }

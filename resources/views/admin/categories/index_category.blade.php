@@ -1,5 +1,5 @@
-@extends('admin.layouts.app_admin')
-@section('content')
+@extends('admin.adminka')
+@section('main_content')
     <h3>Show all categories</h3>
     <table class="table table-striped table-bordered">
         <thead>
@@ -19,10 +19,8 @@
                 <td>{{$category->created_at}}</td>
                 <td>
 
-                    <a href="{{action('AdminCategoryController@show',$category->id)}}"
-                       class="btn btn-small btn-primary">Показать категорию</a>
-                    <a href="{{action('AdminCategoryController@edit',$category->id)}}"
-                       class="btn btn-small btn-success">Редактировать категорию</a>
+                    <a href="{{action('AdminCategoryController@show',$category->id)}}"> <i class="fa fa-eye fa-2x" ></i>                    </a>
+                    <a href="{{action('AdminCategoryController@edit',$category->id)}}"> <i class="fa fa-edit fa-2x" ></i>                    </a>
                 </td>
                 <td>
                     {!! Form::open(['action'=>['AdminCategoryController@destroy',$category->id],'method'=>'DELETE']) !!}

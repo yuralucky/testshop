@@ -69,7 +69,7 @@
             <div class="row blogs_container">
                 <div class="col-lg-4 blog_item_col">
                     <div class="blog_item">
-                        <div class="blog_background" style="background-image:url({{asset('image/blog_1.jpg')}})"></div>
+                        <div class="blog_background" style="background-image:url({{asset('image/sony.jpeg')}})"></div>
                         <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
                             <h4 class="blog_title">Review new notebook Sony</h4>
                             <span class="blog_meta">Device Review | june, 2018</span>
@@ -79,9 +79,9 @@
                 </div>
                 <div class="col-lg-4 blog_item_col">
                     <div class="blog_item">
-                        <div class="blog_background" style="background-image:url({{asset('image/blog_2.jpg')}})"></div>
+                        <div class="blog_background" style="background-image:url({{asset('image/iphoneX.jpeg')}})"></div>
                         <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
-                            <h4 class="blog_title">Feedvback about IphoneX</h4>
+                            <h4 class="blog_title">Feedback about IphoneX</h4>
                             <span class="blog_meta">Lola | may, 2018</span>
                             <a class="blog_more" href="#">Read more</a>
                         </div>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="col-lg-4 blog_item_col">
                     <div class="blog_item">
-                        <div class="blog_background" style="background-image:url({{asset('image/blog_3.jpg')}})"></div>
+                        <div class="blog_background" style="background-image:url({{asset('image/tablet.jpeg')}})"></div>
                         <div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
                             <h4 class="blog_title">I want to buy tablet. Help me</h4>
                             <span class="blog_meta">by Tuto | july, 2018</span>

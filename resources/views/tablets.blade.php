@@ -8,9 +8,9 @@
 
                 <div class="breadcrumbs d-flex flex-row align-items-center">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active"><a href="index.html"><i class="fa fa-angle-right"
-                                                                   aria-hidden="true"></i>'s</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li class="active"><a href="#"><i class="fa fa-angle-right"
+                                                          aria-hidden="true"></i>phones</a></li>
                     </ul>
                 </div>
 
@@ -19,7 +19,7 @@
                 <div class="sidebar">
                     <div class="sidebar_section">
                         <div class="sidebar_title">
-                            <h5>Product Category</h5>
+                            <h5>Main Brands</h5>
                         </div>
                         <ul class="sidebar_categories">
                             @foreach($categories as $category)
@@ -78,38 +78,24 @@
 
                                 <div class="container">
                                     <div class="row">
-                                        <div class="col">
-                                            <div class="product_slider_container">
-                                                <div class="owl-carousel owl-theme product_slider">
+                                        @foreach($tablets as $tablet)
+                                            <div class="col-4">
 
-
-                                                    @foreach($devices as $device)
-
-                                                        <div class="owl-item product_slider_item">
-                                                            <div class="product-item">
-                                                                <div class="product discount">
-                                                                    <div class="product_image">
-                                                                        <img src="{{asset('image/note1.jpeg')}}" alt="">
-                                                                    </div>
-                                                                    <div class="favorite favorite_left"></div>
-                                                                    <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-                                                                        <span>-$20</span></div>
-                                                                    <div class="product_info">
-                                                                        <h6 class="product_name"><a
-                                                                                    href="#">{{$device->name}}</a></h6>
-                                                                        <div class="product_price">
-                                                                            UAH {{$device->price}}</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    @endforeach
-
+                                                <div class="card my-1">
+                                                    <div class="card-header">
+                                                        <a href="{{action('MainController@single',$tablet->id)}}">
+                                                            <img src="{{asset('image/note1.jpeg')}}" alt="" class="img-fluid" style="">
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">{{$tablet->name}}</h5>
+                                                        <p class="card-text">{{$tablet->description}}</p>
+                                                        <a href="#" class="btn btn-">Add shopping card</a>
+                                                    </div>
+                                                    </a>
                                                 </div>
                                             </div>
-                                        </div>
 
-
+                                        @endforeach
                                     </div>
                                 </div>
 

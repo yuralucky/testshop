@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Device;
+use Egulias\EmailValidator\Exception\ConsecutiveAt;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use PhpParser\Node\Stmt\Return_;
@@ -27,6 +29,7 @@ class AdminDeviceController extends Controller
      */
     public function create()
     {
+        $category=Category::all();
         return view('admin.devices.create_device');
     }
 
@@ -38,9 +41,16 @@ class AdminDeviceController extends Controller
      */
     public function store(Request $request)
     {
+
         Device::create($request->all());
         Session::flash('flash_message', 'Товар добавлен');
         return redirect('device');
+    }
+
+
+    public function upload()
+    {
+        return 'hi';
     }
 
     /**
@@ -87,7 +97,7 @@ class AdminDeviceController extends Controller
     public function destroy(Device $device)
     {
         $device->delete();
-        Session::flash('flash_message','Товар удаален');
+        Session::flash('flash_message','Товар удален');
         return redirect()->back();
 
     }

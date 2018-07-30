@@ -1,11 +1,11 @@
-@extends('admin.layouts.app_admin')
-@section('content')
+@extends('admin.adminka')
+@section('main_content')
     <div class="container">
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
                 <h3 class="text-center">Новый товар</h3>
-                {!! Form::open(['action'=>'AdminDeviceController@store']) !!}
+                {!! Form::model($category,['action'=>'AdminDeviceController@store']) !!}
 
                 <div class="form-group">
                     {!! Form::label('Название товара','Введите название товара') !!}
@@ -14,11 +14,6 @@
                 <div class="form-group">
                     {!! Form::label('Описание','Введите краткое описание') !!}
                     {!! Form::text('description','',['class'=>'form-control']) !!}
-
-                </div>
-                <div class="form-group">
-                    {!! Form::label('Путь к изображению','Введите путь') !!}
-                    {!! Form::text('path_to_image','',['class'=>'form-control']) !!}
 
                 </div>
                 <div class="form-group">
@@ -42,7 +37,7 @@
 
                 </div>
                 <div class="form-group">
-                    {!! Form::label('Категория','Введите номер категории') !!}
+                    {!! Form::label('Категория','Выберите категорию') !!}
                     {!! Form::text('category','',['class'=>'form-control']) !!}
                 </div>
                 <div class="form-group">
@@ -52,6 +47,17 @@
 
                 {{Form::submit('Создать новый товар',['class'=>'btn btn-primary btn-block'])}}
                 {!! Form::close() !!}
+
+                {{--{!! Form::open(['action'=>'AdminDeviceController@upload']) !!}--}}
+                {{--<div class="form-group">--}}
+                    {{--{!! Form::label('Изображение') !!}--}}
+                    {{--{!! Form::file('image',['class'=>'form-control']) !!}--}}
+
+                    {{--{{Form::submit('Создать новый товар',['class'=>'btn btn-primary btn-block'])}}--}}
+
+
+                {{--</div>--}}
+                {{--{!! Form::close() !!}--}}
             </div>
             <div class="col-sm-2"></div>
         </div>

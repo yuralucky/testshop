@@ -25,7 +25,7 @@
                     <div class="banner_item align-items-center"
                          style="background-image:url({{asset('image/phone1.jpg')}})">
                         <div class="banner_category">
-                            <a href="/categ">Phones</a>
+                            <a href="/phones">Phones</a>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="banner_item align-items-center"
                          style="background-image:url({{asset('image/note1.jpeg')}})">
                         <div class="banner_category">
-                            <a href="/categ">Notebooks</a>
+                            <a href="/laptops">Laptops</a>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                     <div class="banner_item align-items-center"
                          style="background-image:url({{asset('image/tablet2.jpeg')}})">
                         <div class="banner_category">
-                            <a href="/categ">Tablets</a>
+                            <a href="/tablets">Tablets</a>
                         </div>
                     </div>
                 </div>

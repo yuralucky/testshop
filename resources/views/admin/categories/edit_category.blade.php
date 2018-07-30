@@ -1,5 +1,5 @@
-@extends('admin.layouts.app_admin')
-@section('content')
+@extends('admin.adminka')
+@section('main_content')
     <h3>Отредактируйте категорию</h3>
     {!! Form::model($category,['method'=>'PATCH','action'=>['AdminCategoryController@update',$category->id]]) !!}
 

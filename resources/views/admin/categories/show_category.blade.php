@@ -1,5 +1,5 @@
-@extends('admin.layouts.app_admin')
-@section('content')
+@extends('admin.adminka')
+@section('main_content')
 
 
     <h3>Просмотр категории</h3>

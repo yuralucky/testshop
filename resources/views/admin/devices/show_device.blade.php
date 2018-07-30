@@ -22,7 +22,7 @@
         <tbody>
         <tr>
             <td>{{$device->id}}</td>
-            <td>{{$device->path_to_image}}</td>
+            <td><img src="{{asset('image/'.$device->path_to_image.'.png')}}" class="img-fluid" style="width:80px;height: 60px" ></td>
             <td>{{$device->name}}</td>
             <td>{{$device->description}}</td>
             <td>{{$device->price}}</td>
@@ -34,12 +34,12 @@
             <td>{{$device->created_at}}</td>
             <td>
                 <a href="{{action('AdminDeviceController@edit',$device->id)}}"
-                   class="btn-group btn-small btn-success">Редактировать товар</a>
+                   class="btn btn-small btn-success">Редактировать товар</a>
             </td>
             <td>
                 {!! Form::open(['action'=>['AdminDeviceController@destroy',$device->id],'method'=>'DELETE']) !!}
 
-                {!! Form::submit('&times;',['class'=>'btn ']) !!}
+                {!! Form::submit('&times;',['class'=>'btn btn-danger']) !!}
                 {!! Form::close() !!}
             </td>
         </tr>

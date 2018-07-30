@@ -18,13 +18,13 @@ Route::get('/contact', function () {
 Route::get('/phones','MainController@phones');
 Route::get('/tablets','MainController@tablets');
 Route::get('/laptops','MainController@laptops');
-Route::get('/single','MainController@single');
-Route::get('/admin',function(){
-    return view('admin.dashboard');
-})->middleware('auth');
-//Route::get('/single',function(){
-//    return view('single');
-//});
+Route::get('/phones/{device}','MainController@single');
+Route::get('/admin',function() {
+    return view('admin.adminka');
+});
+Route::get('user',function(){
+    return Auth::user()->name;
+});
 Route::get('/test',function(){
     return view('admin.layouts.app_admin');
 });
