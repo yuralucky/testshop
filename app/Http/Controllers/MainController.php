@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Device;
 use App\Laptop;
+use App\Tablet;
 use Doctrine\DBAL\Schema\Table;
 use Illuminate\Http\Request;
 use MongoDB\BSON\Decimal128;
@@ -44,6 +45,7 @@ class MainController extends Controller
     {
         $categories = Category::all();
         $tablets = Tablet::all();
+
         return view('tablets', compact('categories', 'tablets'));
     }
 

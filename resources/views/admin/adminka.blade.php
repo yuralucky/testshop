@@ -48,6 +48,18 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{route('tablet.index')}}">
+                            <i class="fa fa-mobile fa-3x" ></i>
+                            Tablets
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('laptop.index')}}">
+                            <i class="fa fa-mobile fa-3x" ></i>
+                            Laptops
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{route('category.index')}}">
                             <i class="fa fa-list-ol fa-2x" ></i>
                             Categories
@@ -60,9 +72,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('phone.index')}}">
                             <span data-feather="bar-chart-2"></span>
-                            Reports
+                            Phones
                         </a>
                     </li>
                     <li class="nav-item">

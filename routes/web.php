@@ -33,6 +33,9 @@ Route::get('/single1',function(){
 });
 Route::resource('category','AdminCategoryController');
 Route::resource('device','AdminDeviceController');
+Route::resource('phone','AdminPhoneController');
+Route::resource('tablet','AdminTabletController');
+Route::resource('laptop','AdminLaptopController');
 
 Auth::routes();
 
