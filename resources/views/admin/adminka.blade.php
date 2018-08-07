@@ -4,18 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
-          content="Пример на bootstrap 4: Базовая панель администратора с фиксированной боковой панелью и навигационной панелью.">
+          content=" Базовая панель администратора с фиксированной боковой панелью и навигационной панелью">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
     <title>Dashboard</title>
-
     <!-- Bootstrap core CSS -->
 
-@include('layouts.styles')
+    @include('layouts.styles')
 
-<!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -25,7 +22,7 @@
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
+            <a class="nav-link" href="/">Sign out</a>
         </li>
     </ul>
 </nav>
@@ -43,43 +40,41 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('device.index')}}">
-                            <i class="fa fa-mobile fa-3x" ></i>
+                            {{--<i class="fa fa-mobile fa-3x"></i>--}}
                             Device
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('tablet.index')}}">
-                            <i class="fa fa-mobile fa-3x" ></i>
                             Tablets
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('laptop.index')}}">
-                            <i class="fa fa-mobile fa-3x" ></i>
                             Laptops
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('category.index')}}">
-                            <i class="fa fa-list-ol fa-2x" ></i>
+
                             Categories
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-users fa-2x" ></i>
-                            Customers
+                        <a class="nav-link" href="/admin/users">
+
+                            Users
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('phone.index')}}">
-                            <span data-feather="bar-chart-2"></span>
+
                             Phones
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
-                            <span data-feather="layers"></span>
+
                             Integrations
                         </a>
                     </li>
@@ -135,58 +130,11 @@
                 </div>
             </div>
 
-            {{--<canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>--}}
             @yield('main_content')
         </main>
     </div>
 </div>
 
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../../assets/js/vendor/popper.min.js"></script>
-<script src="../../dist/js/bootstrap.min.js"></script>
 
-<!-- Icons -->
-<script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-<script>
-    feather.replace()
-</script>
-
-{{--<!-- Graphs -->--}}
-{{--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>--}}
-{{--<script>--}}
-    {{--var ctx = document.getElementById("myChart");--}}
-    {{--var myChart = new Chart(ctx, {--}}
-        {{--type: 'line',--}}
-        {{--data: {--}}
-            {{--labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],--}}
-            {{--datasets: [{--}}
-                {{--data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],--}}
-                {{--lineTension: 0,--}}
-                {{--backgroundColor: 'transparent',--}}
-                {{--borderColor: '#007bff',--}}
-                {{--borderWidth: 4,--}}
-                {{--pointBackgroundColor: '#007bff'--}}
-            {{--}]--}}
-        {{--},--}}
-        {{--options: {--}}
-            {{--scales: {--}}
-                {{--yAxes: [{--}}
-                    {{--ticks: {--}}
-                        {{--beginAtZero: false--}}
-                    {{--}--}}
-                {{--}]--}}
-            {{--},--}}
-            {{--legend: {--}}
-                {{--display: false,--}}
-            {{--}--}}
-        {{--}--}}
-    {{--});--}}
-{{--</script>--}}
 </body>
 </html>

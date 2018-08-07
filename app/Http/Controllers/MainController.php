@@ -6,6 +6,7 @@ use App\Category;
 use App\Device;
 use App\Laptop;
 use App\Tablet;
+use App\User;
 use Doctrine\DBAL\Schema\Table;
 use Illuminate\Http\Request;
 use MongoDB\BSON\Decimal128;
@@ -53,5 +54,11 @@ class MainController extends Controller
     {
 
       return view('single', compact('device'));
+    }
+
+    public function showUsers()
+    {
+        $users=User::all();
+        return view('admin.users',compact('users'));
     }
 }

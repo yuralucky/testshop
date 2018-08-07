@@ -63,6 +63,7 @@
                     </div>
                 </div>
             </div>
+            <br><br>
             <div class="row">
 
 
@@ -75,9 +76,9 @@
                             <div class="card-header">
                                 <img src="{{asset('image/note1.jpeg')}}" alt="" class="img-fluid" style="">
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">{{$device->name}}</h5>
-                                <p class="card-text">{{$device->description}}</p>
+                            <div class="card-body ">
+                                <h5 class="card-title text-center">{{$device->name}}</h5>
+                                <p class="card-text text-center">{{$device->description}}</p>
                                 <a href="#" class="btn btn-primary">Add shopping card</a>
                             </div>
                         </div>

@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'MainController@index');
+Route::get('/admin/users', 'MainController@showUsers');
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -30,7 +31,10 @@ Route::get('/test',function(){
 });
 Route::get('/single1',function(){
     return view('categories');
-});
+})->middleware('admin');
+//Route::group('admin',function (){
+//
+//});
 Route::resource('category','AdminCategoryController');
 Route::resource('device','AdminDeviceController');
 Route::resource('phone','AdminPhoneController');
@@ -39,4 +43,4 @@ Route::resource('laptop','AdminLaptopController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

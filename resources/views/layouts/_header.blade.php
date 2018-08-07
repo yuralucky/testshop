@@ -22,7 +22,7 @@
                                 </a>
 
                                     <ul class="account_selection">
-                                        <li><a href="/logout"><i class="fa fa-sign-in" aria-hidden="true"></i>Выйти</a>
+                                        <li><a href="{{action('Auth\LoginController@logout')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Выйти</a>
                                         </li>
 
                                     </ul>
