@@ -47,30 +47,13 @@
                                             <span class="type_sorting_text">Default Sorting</span>
                                             <i class="fa fa-angle-down"></i>
                                             <ul class="sorting_type">
-                                                <li class="type_sorting_btn"
-                                                    data-isotope-option='{ "sortBy": "original-order" }'><span>Default Sorting</span>
+                                                <li><a href="/phonesByName"> <span>Sorting By Name</span></a>
+                                                <li><a href="/phonesByPrice"> <span>Sorting By Price</span></a>
                                                 </li>
-                                                <li class="type_sorting_btn"
-                                                    data-isotope-option='{ "sortBy": "price" }'><span>Price</span></li>
-                                                <li class="type_sorting_btn" data-isotope-option='{ "sortBy": "name" }'>
-                                                    <span>Product Name</span></li>
                                             </ul>
                                         </li>
 
                                     </ul>
-                                    <div class="pages d-flex flex-row align-items-center">
-                                        <div class="page_current">
-                                            <span>1</span>
-                                            <ul class="page_selection">
-                                                <li><a href="#">1</a></li>
-                                                <li><a href="#">2</a></li>
-                                                <li><a href="#">3</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="page_total"><span>of</span> 3</div>
-                                        <div id="next_page" class="page_next"><a href="#"><i
-                                                        class="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
-                                    </div>
 
                                 </div>
                                 <hr>
@@ -78,18 +61,20 @@
 
                                 <div class="container">
                                     <div class="row">
-                                        @foreach($devices as $device)
+                                        @foreach($phones as $phone)
                                             <div class="col-4">
 
                                                 <div class="card my-1">
                                                     <div class="card-header">
-                                                        <a href="{{action('MainController@single',$device->id)}}">
-                                                            <img src="{{asset('image/note1.jpeg')}}" alt="" class="img-fluid" style="">
+                                                        <a href="{{action('MainController@single',$phone->id)}}">
+                                                            <img src="{{asset('image/note1.jpeg')}}" alt=""
+                                                                 class="img-fluid" style="">
                                                     </div>
                                                     <div class="card-body">
-                                                        <h5 class="card-title">{{$device->name}}</h5>
-                                                        <p class="card-text">{{$device->description}}</p>
-                                                        <a href="#" class="btn btn-">Add shopping card</a>
+                                                        <h5 class="card-title text-center">{{$phone->name}}</h5>
+                                                        <p class="card-text text-center">{{$phone->description}}</p>
+                                                        <p class="card-text text-center">{{$phone->price}}</p>
+                                                        <a href="#" class="btn btn-dark btn-block">Add shopping card</a>
                                                     </div>
                                                     </a>
                                                 </div>
@@ -99,26 +84,6 @@
                                     </div>
                                 </div>
 
-
-                                <!-- Product Sorting -->
-
-                                <div class="product_sorting_container product_sorting_container_bottom clearfix">
-
-                                    <div class="pages d-flex flex-row align-items-center">
-                                        <div class="page_current">
-                                            <span>1</span>
-                                            <ul class="page_selection">
-                                                <li><a href="#">1</a></li>
-                                                <li><a href="#">2</a></li>
-                                                <li><a href="#">3</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="page_total"><span>of</span> 3</div>
-                                        <div id="next_page_1" class="page_next"><a href="#"><i
-                                                        class="fa fa-long-arrow-right" aria-hidden="true"></i></a></div>
-                                    </div>
-
-                                </div>
 
                             </div>
                         </div>

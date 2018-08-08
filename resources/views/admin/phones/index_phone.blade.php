@@ -1,6 +1,6 @@
 @extends('admin.adminka')
 @section('main_content')
-    <h3>Show all devices</h3>
+    <h3>Show all phones</h3>
     <table class="table table-striped table-bordered">
         <thead>
         <td> Id </td>
@@ -46,8 +46,7 @@
         @endforeach
         </tbody>
         <tfoot>
-        <a href="{{action('AdminPhoneController@create')}}" class="btn btn-danger btn-block">Добавить новый
-            телефон</a>
+        <a href="{{action('AdminPhoneController@create')}}" class="btn btn-danger btn-block">Add new phone</a>
         </tfoot>
     </table>
 @endsection

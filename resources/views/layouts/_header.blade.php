@@ -15,30 +15,36 @@
                         <ul class="top_nav_menu">
 
                             <li class="account">
-                                @auth()
-                                <a href="#">
-                                    Hello {{Auth::user()->name}}
-                                    <i class="fa fa-angle-down"></i>
-                                </a>
 
-                                    <ul class="account_selection">
-                                        <li><a href="{{action('Auth\LoginController@logout')}}"><i class="fa fa-sign-in" aria-hidden="true"></i>Выйти</a>
-                                        </li>
-
-                                    </ul>
-
-                                @endauth
                                 @guest()
-                                        <a href="#">
-                                            My Account
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
+                                    <a href="#">
+                                        My Account
+                                        <i class="fa fa-angle-down"></i>
+                                    </a>
                                     <ul class="account_selection">
                                         <li><a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a>
                                         </li>
                                         <li><a href="/register"><i class="fa fa-user-plus"
                                                                    aria-hidden="true"></i>Register</a></li>
                                     </ul>
+                                @else
+                                    <a href="#">
+                                        Hello {{Auth::user()->name}}
+                                        <i class="fa fa-angle-down"></i>
+                                    </a>
+
+                                    <ul class="account_selection">
+                                        <li><a href="{{route('logout')}} " onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit()" ;><i
+                                                        class="fa fa-sign-in" aria-hidden="true"></i>Выйти</a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                  style="display: none;">
+                                                {{ csrf_field() }}
+                                            </form>
+                                        </li>
+
+                                    </ul>
+
 
                                 @endguest
                             </li>
@@ -75,7 +81,7 @@
                                 <a href="#">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                     {{--<span id="checkout_items" class="checkout_items">2</span>--}}
-                                </a >
+                                </a>
                             </li>
                         </ul>
                         <div class="hamburger_container">

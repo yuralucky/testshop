@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <h3 class="text-center">Редактирование товара</h3>
+                <h3 class="text-center">Edit phone</h3>
                 {!! Form::open(['method'=>'PATCH','action'=>['AdminPhoneController@update',$phone->id]]) !!}
 
                 <div class="form-group">

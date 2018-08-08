@@ -2,7 +2,7 @@
 @section('main_content')
 
 
-    <h3>Просмотр категории</h3>
+    <h3>Phone</h3>
     <table class="table table-striped table-bordered">
         <thead>
         <td> Id</td>

@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-                <h3 class="text-center">Новый товар</h3>
+                <h3 class="text-center">Add new phone</h3>
                 {!! Form::open(['action'=>'AdminPhoneController@store']) !!}
                 {!! Form::token() !!}
                 <div class="form-group">
@@ -23,7 +23,7 @@
                 </div>
 
 
-                {{Form::submit('Создать новый товар',['class'=>'btn btn-primary btn-block'])}}
+                {{Form::submit('Add',['class'=>'btn btn-primary btn-block'])}}
                 {!! Form::close() !!}
 
 

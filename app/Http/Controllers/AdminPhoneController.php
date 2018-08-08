@@ -30,7 +30,7 @@ class AdminPhoneController extends Controller
      */
     public function create()
     {
-        $category=Category::all();
+        $category = Category::all();
         return view('admin.phones.create_phone');
     }
 
@@ -48,11 +48,6 @@ class AdminPhoneController extends Controller
         return redirect('phone');
     }
 
-
-    public function upload()
-    {
-        return 'hi';
-    }
 
     /**
      * Display the specified resource.
@@ -86,7 +81,7 @@ class AdminPhoneController extends Controller
     public function update(Request $request, Phone $phone)
     {
         $phone->update($request->all());
-        return redirect('phone');
+        return redirect('admin/phone');
     }
 
     /**
@@ -99,8 +94,8 @@ class AdminPhoneController extends Controller
     public function destroy(Phone $phone)
     {
         $phone->delete();
-        Session::flash('flash_message','Товар удален');
-        return redirect('phone');
+        Session::flash('flash_message', 'Товар удален');
+        return redirect('admin/phone');
 
     }
 }

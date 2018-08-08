@@ -12,35 +12,47 @@
 */
 
 Route::get('/', 'MainController@index');
-Route::get('/admin/users', 'MainController@showUsers');
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/phones','MainController@phones');
-Route::get('/tablets','MainController@tablets');
-Route::get('/laptops','MainController@laptops');
-Route::get('/phones/{device}','MainController@single');
-Route::get('/admin',function() {
-    return view('admin.adminka');
-});
-Route::get('user',function(){
+Route::get('/phones', 'MainController@phones');
+Route::get('/phonesByName', 'MainController@phonesByName');
+Route::get('/phonesByPrice', 'MainController@phonesByPrice');
+Route::get('/tablets', 'MainController@tablets');
+Route::get('/tabletsByName', 'MainController@tabletsByName');
+Route::get('/tabletsByPrice', 'MainController@tabletsByPrice');
+Route::get('/laptops', 'MainController@laptops');
+Route::get('/laptopsByName', 'MainController@laptopsByName');
+Route::get('/laptopsByPrice', 'MainController@laptopsByPrice');
+Route::get('/phones/{device}', 'MainController@single');
+
+Route::get('user', function () {
     return Auth::user()->name;
 });
-Route::get('/test',function(){
+Route::get('/test', function () {
     return view('admin.layouts.app_admin');
 });
-Route::get('/single1',function(){
-    return view('categories');
+Route::get('/single1', function () {
+    return 'categories';
 })->middleware('admin');
-//Route::group('admin',function (){
-//
-//});
-Route::resource('category','AdminCategoryController');
-Route::resource('device','AdminDeviceController');
-Route::resource('phone','AdminPhoneController');
-Route::resource('tablet','AdminTabletController');
-Route::resource('laptop','AdminLaptopController');
+Route::group(['prefix' => 'admin','middleware'=>'admin'], function () {
+    Route::resource('category', 'AdminCategoryController');
+    Route::resource('device', 'AdminDeviceController');
+    Route::resource('phone', 'AdminPhoneController');
+    Route::resource('tablet', 'AdminTabletController');
+    Route::resource('laptop', 'AdminLaptopController');
+    Route::get('users', 'MainController@showUsers');
+    Route::get('/', function () {
+        return view('admin.adminka');
+    });
 
+});
+
+
+//Route::post('logout','Auth\LoginController@logout');
+Route::get('user', function () {
+    return Auth::user()->name;
+});
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
