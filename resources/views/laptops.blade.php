@@ -67,7 +67,8 @@
                                                 <div class="card my-1">
                                                     <div class="card-header">
                                                         <a href="{{action('MainController@single',$laptop->id)}}">
-                                                            <img src="{{asset('image/note1.jpeg')}}" alt="" class="img-fluid" style="">
+                                                            <img src="{{asset('image/note1.jpeg')}}" alt=""
+                                                                 class="img-fluid" style=""></a>
                                                     </div>
                                                     <div class="card-body">
                                                         <h5 class="card-title text-center">{{$laptop->name}}</h5>
@@ -81,8 +82,10 @@
 
                                         @endforeach
                                     </div>
-                                </div>
+                                       {{$laptops->links()}}
 
+
+                                </div>
 
 
                             </div>
