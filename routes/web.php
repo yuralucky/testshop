@@ -10,9 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/image1', function () {
-    return 'Image hiphp';
-});
 Route::get('/', 'MainController@index');
 Route::get('/contact', function () {
     return view('contact');
@@ -26,7 +23,9 @@ Route::get('/tabletsByPrice', 'MainController@tabletsByPrice');
 Route::get('/laptops', 'MainController@laptops');
 Route::get('/laptopsByName', 'MainController@laptopsByName');
 Route::get('/laptopsByPrice', 'MainController@laptopsByPrice');
-Route::get('/phones/{device}', 'MainController@single');
+Route::get('/phones/{phone}', 'MainController@single_phone');
+Route::get('/laptops/{laptop}', 'MainController@single_laptop');
+Route::get('/tablets/{tablet}', 'MainController@single_tablet');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
     Route::resource('category', 'AdminCategoryController');
@@ -39,6 +38,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
         return view('admin.adminka');
     });
 });
+Route::get('upload','MainController@upload');
+Route::post('upload','MainController@uploadImage');
 
 Route::get('user', function () {
     return Auth::user()->name;

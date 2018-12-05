@@ -62,13 +62,14 @@
                                 <div class="container">
                                     <div class="row">
                                         @foreach($laptops as $laptop)
-                                            <div class="col-4">
+                                            <div class="col-4 mb-4">
 
                                                 <div class="card my-1">
                                                     <div class="card-header">
-                                                        <a href="{{action('MainController@single',$laptop->id)}}">
-                                                            <img src="{{asset('image/note1.jpeg')}}" alt=""
-                                                                 class="img-fluid" style=""></a>
+                                                        <a href="{{action('MainController@single_laptop',$laptop->id)}}">
+                                                            <img src="{{asset('image/'.$laptop->image)}}" alt=""
+                                                                 class="img-fluid"
+                                                                 style="width: auto;height: 220px"></a>
                                                     </div>
                                                     <div class="card-body">
                                                         <h5 class="card-title text-center">{{$laptop->name}}</h5>
@@ -82,7 +83,7 @@
 
                                         @endforeach
                                     </div>
-                                       {{$laptops->links()}}
+                                    {{$laptops->links()}}
 
 
                                 </div>

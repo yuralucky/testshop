@@ -42,7 +42,7 @@ class AdminCategoryController extends Controller
         $category = new Category($request->all());
         $category->save();
         \Session::flash('flash_message', 'Категория успешно создана');
-        return redirect('category');
+        return redirect('admin/category');
     }
 
     /**

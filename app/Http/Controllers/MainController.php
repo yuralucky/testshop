@@ -100,10 +100,41 @@ class MainController extends Controller
         return view('single', compact('device'));
     }
 
+    public function single_laptop(Laptop $laptop)
+    {
+
+        return view('single_laptop', compact('laptop'));
+    }
+
+    public function single_phone(Phone $phone)
+    {
+
+        return view('single_phone', compact('phone'));
+    }
+
+    public function single_tablet(Tablet $tablet)
+    {
+
+        return view('single_tablet', compact('tablet'));
+    }
+
     public function showUsers()
     {
         $users = User::all();
         return view('admin.users', compact('users'));
+    }
+
+    public function upload()
+    {
+        return view('admin.tablets.upload_image');
+    }
+
+    public function uploadImage()
+    {
+        $imageName = time() . '.' . request()->image->extension();
+        request()->image->move(public_path('image'), $imageName);
+
+        return back();
     }
 
 

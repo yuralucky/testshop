@@ -42,10 +42,16 @@ class AdminPhoneController extends Controller
      */
     public function store(Request $request)
     {
-
-        Phone::create($request->all());
+        $name = $request->file('image')->getClientOriginalName();
+        request()->image->move(public_path('image'), $name);
+        $phone = new Phone();
+        $phone->image = $name;
+        $phone->name = $request->name;
+        $phone->description = $request->description;
+        $phone->price = $request->price;
+        $phone->save();
         Session::flash('flash_message', 'Товар добавлен');
-        return redirect('phone');
+        return redirect('admin/phone');
     }
 
 

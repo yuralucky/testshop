@@ -65,8 +65,8 @@
 
                                                 <div class="card my-1">
                                                     <div class="card-header">
-                                                        <a href="{{action('MainController@single',$tablet->id)}}">
-                                                            <img src="{{asset('image/note1.jpeg')}}" alt="" class="img-fluid" style="">
+                                                        <a href="{{action('MainController@single_tablet',$tablet->id)}}">
+                                                            <img src="{{asset('image/'.$tablet->image)}}" alt="" class="img-fluid" style="width: auto;height: 220px">
                                                     </div>
                                                     <div class="card-body">
                                                         <h5 class="card-title text-center">{{$tablet->name}}</h5>

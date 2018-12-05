@@ -4,6 +4,7 @@
     <table class="table table-striped table-bordered">
         <thead>
         <td> Id </td>
+        <td>Изображение</td>
         <td> Название</td>
         <td> Описание</td>
         <td>Цена</td>
@@ -14,6 +15,7 @@
         @foreach($phones as $phone)
             <tr>
                 <td>{{$phone->id}}</td>
+                <td><img src="{{asset('image/'.$phone->image)}}" style="width: 50px;height: 50px" alt=""></td>
                 <td>{{$phone->name}}</td>
                 <td>{{$phone->description}}</td>
                 <td>{{$phone->price}}</td>

@@ -1,5 +1,5 @@
-@extends('admin.layouts.app_admin')
-@section('content')
+@extends('admin.adminka')
+@section('main_content')
 
 
     <h3>Просмотр категории</h3>
@@ -10,8 +10,8 @@
         <td> Название</td>
         <td> Описание</td>
         <td>Цена</td>
-        <td> Вес</td>
-        <td>ОП</td>
+        {{--<td> Вес</td>--}}
+        {{--<td>ОП</td>--}}
         <td>Процессор</td>
         <td>Год выпуска</td>
         <td>№категории</td>
@@ -26,8 +26,8 @@
             <td>{{$device->name}}</td>
             <td>{{$device->description}}</td>
             <td>{{$device->price}}</td>
-            <td>{{$device->weight}}</td>
-            <td>{{$device->memory}}</td>
+            {{--<td>{{$device->weight}}</td>--}}
+            {{--<td>{{$device->memory}}</td>--}}
             <td>{{$device->CPU}}</td>
             <td>{{$device->year_of_made}}</td>
             <td>{{$device->category}}</td>

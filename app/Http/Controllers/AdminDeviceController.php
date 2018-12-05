@@ -42,6 +42,7 @@ class AdminDeviceController extends Controller
     public function store(Request $request)
     {
 
+
         Device::create($request->all());
         Session::flash('flash_message', 'Товар добавлен');
         return redirect('device');

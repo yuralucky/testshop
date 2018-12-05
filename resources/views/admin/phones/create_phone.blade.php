@@ -5,7 +5,7 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
                 <h3 class="text-center">Add new phone</h3>
-                {!! Form::open(['action'=>'AdminPhoneController@store']) !!}
+                {!! Form::open(['action'=>'AdminPhoneController@store','files'=>true]) !!}
                 {!! Form::token() !!}
                 <div class="form-group">
                     {!! Form::label('Название товара','Введите название товара') !!}
@@ -19,6 +19,10 @@
                 <div class="form-group">
                     {!! Form::label('Цена','Введите цену') !!}
                     {!! Form::number('price','',['class'=>'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('image') !!}
+                    {!! Form::file('image',array('form-control')) !!}
 
                 </div>
 
